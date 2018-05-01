@@ -11,14 +11,21 @@ class Crawler:
         Function to fetch HTML from provided URL and scrape text contents
         from it.
         """
-        pageHTML = requests.get(url)
+        
+        # Check if the URL is reachable, if not return empty string.
+        try:
+            pageHTML = requests.get(url)
+        
+        except requests.exceptions.MissingSchema:
+            return ""
+
         parsedContent = BeautifulSoup(pageHTML.content, 'html.parser')
 
         # Extract script, link and style tags right off the bat.
         for script in parsedContent(["script", "style", "link"]):
             script.extract()
 
-        textInPage = parsedContent.body.get_text()
+        textInPage = parsedContent.get_text()
 
         return textInPage
 
@@ -29,7 +36,7 @@ class Crawler:
         the n words that occur most frequently, with their frequencies.
         """
         words = Counter()
-        words.update(text.split())
+        words.update(text.lower().split())
         mostFrequentWords = words.most_common()
         
         return mostFrequentWords[:n]
