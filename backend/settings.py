@@ -76,7 +76,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': 'ec2-107-21-103-146.compute-1.amazonaws.com',
-        'NAME': 'cushion',
+        'NAME': 'deq1d730iih6dh',
         'USER': 'txfvscajundhdh',
         'PASSWORD': 'e07fda097fbd271ab8ea73a62c1374e466b1cf962c5600b39374a7247452cc62',
         'PORT': 5432
