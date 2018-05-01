@@ -24,10 +24,11 @@ def getURLData(request) :
         textContents = Crawler.getText(request.data["url"])
         frequentWords = Crawler.getMostFrequentWords(textContents, NUM_WORDS)
 
+        #Convert the list of words into a dictionary, making it more easily readable by the front-end.
         frequentWordsDict = [{"word": word[0], "freq": word[1]} for word in frequentWords]
         
-        return Response({
+        return Response(data={
             'text' : textContents,
             'wordFreqs': frequentWordsDict
-        })
+        }, status=status.HTTP_200_OK)
         
