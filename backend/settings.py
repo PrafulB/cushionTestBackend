@@ -75,7 +75,8 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'postgres://dduyewpqxwlncf:9ef454a1504b819a4dfedc18e86ac28d0d53a45e0688cc22fa25723be28fc377@ec2-54-204-46-236.compute-1.amazonaws.com:5432/d2mads21pu7ht8',
+        'HOST': 'postgres://txfvscajundhdh:e07fda097fbd271ab8ea73a62c1374e466b1cf962c5600b39374a7247452cc62@ec2-107-21-103-146.compute-1.amazonaws.com:5432/deq1d730iih6dh',
+        'NAME': 'cushion'
     }
 }
 
