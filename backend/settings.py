@@ -35,8 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.staticfiles',
-    'crawler',
     'rest_framework',
+    'crawler',
 ]
 
 MIDDLEWARE = [
