@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from collections import Counter
 
 class Crawler:
-    """ Class To Implement The Page Scraping & Text Extraction Logic """
+    """ Class To Implement The Page Scraping, Text Extraction & Word Frequency Calculation Logic """
 
     @staticmethod
     def getText(url):
@@ -14,8 +14,8 @@ class Crawler:
         pageHTML = requests.get(url)
         parsedContent = BeautifulSoup(pageHTML.content, 'html.parser')
 
-        # Extract script and style tags right off the bat.
-        for script in parsedContent(["script", "style"]):
+        # Extract script, link and style tags right off the bat.
+        for script in parsedContent(["script", "style", "link"]):
             script.extract()
 
         textInPage = parsedContent.body.get_text()
@@ -25,5 +25,13 @@ class Crawler:
 
         return formattedText
 
-    def getMostFrequentWords(text):
-        pass
+    @staticmethod
+    def getMostFrequentWords(text, numWords):
+        """
+
+        """
+        words = Counter()
+        words.update(text.split())
+        mostFrequentWords = words.most_common()
+        return mostFrequentWords[:10]
+        
