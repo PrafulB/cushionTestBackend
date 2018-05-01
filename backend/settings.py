@@ -75,7 +75,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.path.join(BASE_DIR, 'db.postgres'),
+        'NAME': 'cushion',
+        'USER': 'prtsh32',
+        'PASSWORD': 'pass',
+        'HOST': 'localhost',
+        'PORT': 5432
     }
 }
 
