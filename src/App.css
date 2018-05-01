@@ -1,10 +1,15 @@
 .App {
+  position: absolute;
   text-align: center;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  margin: 15 auto;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.text {
+  padding: 10;
+  text-align: left;
 }
 
 .App-header {
@@ -20,9 +25,4 @@
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
