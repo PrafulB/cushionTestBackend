@@ -19,19 +19,18 @@ class Crawler:
             script.extract()
 
         textInPage = parsedContent.body.get_text()
-        lines = (line.strip() for line in textInPage.splitlines())
-        chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
-        formattedText = '\n'.join(chunk for chunk in chunks if chunk)
 
-        return formattedText
+        return textInPage
 
     @staticmethod
-    def getMostFrequentWords(text, numWords):
+    def getMostFrequentWords(text, n):
         """
-
+        Calculate the frequency of all words in the text and return 
+        the n words that occur most frequently, with their frequencies.
         """
         words = Counter()
         words.update(text.split())
         mostFrequentWords = words.most_common()
-        return mostFrequentWords[:10]
+        
+        return mostFrequentWords[:n]
         
