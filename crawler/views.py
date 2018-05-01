@@ -21,7 +21,6 @@ class CrawlerView:
         API Handler for Getting the URL and returning the Scraped Text &
         Most Frequently Occurring Words
         """
-
         if request.method == "POST" :
             
             textContents = Crawler.getText(request.data["url"])

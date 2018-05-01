@@ -13,6 +13,8 @@ class Crawler:
         """
         
         # Check if the URL is reachable, if not return empty string.
+        if 'http' not in url:
+            url = 'http://' + url
         try:
             pageHTML = requests.get(url)
         

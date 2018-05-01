@@ -25,7 +25,7 @@ SECRET_KEY = 'kfx5@@7orlk1gr2ka9(^9d+ls7g1jdyo+()!az@)12$9k6g*a2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -36,10 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'crawler',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'crawler.requestLogger.RequestLoggingMiddleware',    
 ]
@@ -76,6 +78,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Internationalization
