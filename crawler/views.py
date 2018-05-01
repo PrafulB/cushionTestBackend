@@ -25,9 +25,10 @@ class CrawlerView:
         if request.method == "POST" :
             
             textContents = Crawler.getText(request.data["url"])
+            # If no contents received, assume that the URL is problematic.
             if textContents == "" :
                 return Response(data={
-                    "error" : "Malformed URL"
+                    "error" : "Malformed or Inaccessible URL"
                 }, status=status.HTTP_400_BAD_REQUEST)
 
             frequentWords = Crawler.getMostFrequentWords(textContents, NUM_WORDS)
