@@ -25,7 +25,7 @@ SECRET_KEY = 'kfx5@@7orlk1gr2ka9(^9d+ls7g1jdyo+()!az@)12$9k6g*a2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cushion-challenge.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['cushion-challenge.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
