@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.staticfiles',
     'crawler',
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.common.CommonMiddleware',    
+    'django.middleware.common.CommonMiddleware',
+    'crawler.requestLogger.RequestLoggingMiddleware',    
 ]
 
 ROOT_URLCONF = 'backend.urls'
