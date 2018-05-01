@@ -75,8 +75,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'postgres://txfvscajundhdh:e07fda097fbd271ab8ea73a62c1374e466b1cf962c5600b39374a7247452cc62@ec2-107-21-103-146.compute-1.amazonaws.com:5432/deq1d730iih6dh',
-        'NAME': 'crawler_hitstats'
+        'HOST': 'ec2-107-21-103-146.compute-1.amazonaws.com',
+        'NAME': 'cushion',
+        'USER': 'txfvscajundhdh',
+        'PASSWORD': 'e07fda097fbd271ab8ea73a62c1374e466b1cf962c5600b39374a7247452cc62',
+        'PORT': 5432
     }
 }
 
